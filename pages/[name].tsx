@@ -25,7 +25,7 @@ export default function CountryDetails() {
                 
 
                 {data && (
-                    <div className="container flex flex-wrap w-full justify-between mt-10 dark:text-light">
+                    <div className="container flex flex-wrap w-full justify-between mt-10 mb-[1.4em] dark:text-light">
                         {/* Flag */}
                 <div className='w-6/12 h-3/5 object-fill'>
                   <Image src={data[0].flags.svg} alt="flag" className="w-full h-full" width={100} height={100} />  

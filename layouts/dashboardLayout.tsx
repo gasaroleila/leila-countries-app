@@ -9,7 +9,7 @@ export default function DashboardLayout(props: any) {
     
 
     return (
-        <div className={`${darkTheme ? "dark" : ""} w-screen h-screen`}>
+        <div className={`${darkTheme ? "dark" : ""} w-screen h-screen `}>
             <nav className="bg-light dark:bg-element-dark w-full flex justify-between items-center h-14 text-black shadow-sm">
                 <h1 className="title font-bold ml-14 text-[17px] dark:text-light">Where in the world?</h1>
                 <div className="theme-toggle flex items-center mr-20 cursor-pointer" onClick={toggleDarkTheme}>
@@ -18,7 +18,7 @@ export default function DashboardLayout(props: any) {
                     </div>
             </nav>
             
-            <div className='main px-14 py-10 w-full h-[91vh] dark:bg-background-dark'>
+            <div className='main px-14 py-10 w-full dark:bg-background-dark'>
               {props.children}
             </div>
         </div>
