@@ -1,13 +1,10 @@
 import DashboardLayout from '../layouts/dashboardLayout'
-import { useFiltercountriesByRegionQuery, useGetcountriesQuery } from './api/apiSlice'
+import { useGetcountriesQuery } from './api/apiSlice'
 import {AiOutlineSearch} from 'react-icons/ai'
 import { useRouter } from 'next/router'
-import Selector from '../components/Selector';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useAppSelector } from '../utils/hooks';
-import { RootState } from '../utils/store';
 import { BiChevronDown } from "react-icons/bi";
+import Image from 'next/image'
+import { useState } from 'react';
 
 
 export default function Home() {
@@ -19,7 +16,7 @@ export default function Home() {
   
   let {
     data,
-  } = useGetcountriesQuery();
+  } = useGetcountriesQuery("");
 
 
   const filteredCountries =
@@ -74,7 +71,7 @@ export default function Home() {
         } `}
       >
         
-        {filters?.map((filter,i) => (
+        {filters?.map((filter:any,i:any) => (
           <li
             key={i}
             className={`p-2 text-sm hover:bg-bg hover:dark:bg-background-dark hover:text-black font-semibold
@@ -111,7 +108,7 @@ export default function Home() {
               }}
               >
                 <div className='w-full h-[123px] object-fill'>
-                  <img src={country?.flags?.svg} alt="flag" className='w-full h-full' />  
+                  <Image src={country?.flags?.svg} alt="flag" className='w-full h-full' width={100} height={100} />  
                   </div>
                 <div className='flex flex-col mx-5 my-5 mb-8'>
                   <p className='font-bold my-2'>{country?.name?.common}</p>
