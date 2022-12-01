@@ -2,6 +2,7 @@ import DashboardLayout from "../layouts/dashboardLayout";
 import { BsArrowLeft } from 'react-icons/bs';
 import { useRouter } from "next/router";
 import { useGetcountryByNameQuery } from "./api/apiSlice";
+import Image from 'next/image'
 
 export default function CountryDetails() {
     const router = useRouter()
@@ -27,7 +28,7 @@ export default function CountryDetails() {
                     <div className="flex w-full justify-between mt-10 dark:text-light">
                         {/* Flag */}
                 <div className='w-6/12 h-3/5 object-fill'>
-                  <img src={data[0]?.flags?.svg} alt="flag" className='w-full h-full' />  
+                  <Image src={data[0].flags.svg} alt="flag" className="w-full h-full" width={100} height={100} />  
                     </div>
 
                         {/* Country details */}
@@ -57,8 +58,8 @@ export default function CountryDetails() {
                             <div className="flex mt-10 dark:text-">
                                 <p className="font-semibold mb-2">Border Countries:</p>
                                 {
-                                    data[0]?.borders.map((border:any) => (
-                                        <div className="bg-white dark:bg-element-dark shadow-sm rounded-[3px] w-28 h-8 ml-2 flex items-center justify-center">
+                                    data[0]?.borders.map((border:any, i:any) => (
+                                        <div key={i} className="bg-white dark:bg-element-dark shadow-sm rounded-[3px] w-28 h-8 ml-2 flex items-center justify-center">
                                             <p className="text-hi font-normal">{border}</p>
                                         </div>
 
