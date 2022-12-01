@@ -34,3 +34,36 @@ a {
     background: hsl(0, 0%, 98%);
   }
 }
+
+@media screen and (max-width: 376px) {
+  .main{
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  .title {
+    margin-left: 1.5em;
+  }
+
+  .theme-toggle {
+    margin-right: 1.5em;
+  }
+
+  .search{
+    margin-bottom: 2em;
+  }
+
+  .country {
+    width: 100%;
+    margin-right: 0em!important;
+  }
+
+  .container  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container>div {
+    width: 100%;
+  }
+}

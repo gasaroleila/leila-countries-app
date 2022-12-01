@@ -42,10 +42,10 @@ export default function Home() {
       <div className=''>
 
         {/* search customization section */}
-        <div className='flex justify-between w-[98%]'>
+        <div className='flex flex-wrap justify-between w-[98%]'>
 
           {/* search input */}
-          <div className='bg-background-light dark:bg-element-dark w-4/12 rounded-[3px] h-12 flex items-center shadow-sm'>
+          <div className=' search bg-background-light dark:bg-element-dark w-4/12 rounded-[3px] h-12 flex items-center shadow-sm'>
              <AiOutlineSearch size={20} className="mx-5 dark:text-white" />
               <input type="text" name="search" id="search" value={search} onChange={(e:any) => setSearch(e.target.value.toLowerCase())} className='bg-background-light dark:bg-element-dark dark:text-text-dark h-full  outline-none placeholder:text-hi text-darkGray  font-semibold placeholder:dark:text-light dark:text-text-dark' placeholder='Search for a country...' />
           </div>
@@ -102,7 +102,7 @@ export default function Home() {
         <div className='flex flex-wrap mt-10 dark:text-light'>
           {
             countries && countries?.map((country:any, i:number) => (
-              <div key={i} className={`bg-white dark:bg-element-dark shadow-sm ${i !== (data.length - 1) ? 'mr-[3.5rem]' : ''} mb-[3.5rem] w-[20%] h-2/5 cursor-pointer rounded-[3px]`} 
+              <div key={i} className={`bg-white country dark:bg-element-dark shadow-sm ${i !== (data.length - 1) ? 'mr-[3.5rem]' : ''} mb-[3.5rem] w-[20%] h-2/5 cursor-pointer rounded-[3px]`} 
               onClick={() => {
                  router.push(`/${country?.name?.common}`);
               }}
