@@ -25,7 +25,7 @@ export default function CountryDetails() {
                 
 
                 {data && (
-                    <div className="flex w-full justify-between mt-10 dark:text-light">
+                    <div className="container flex flex-wrap w-full justify-between mt-10 dark:text-light">
                         {/* Flag */}
                 <div className='w-6/12 h-3/5 object-fill'>
                   <Image src={data[0].flags.svg} alt="flag" className="w-full h-full" width={100} height={100} />  
@@ -36,7 +36,7 @@ export default function CountryDetails() {
                             <h1 className="my-6 text-[25px] font-bold">{data[0]?.name?.common}</h1>
                             
                             {/* more details */}
-                        <div className="flex justify-between">
+                        <div className="flex flex-wrap justify-between">
                             <div>
                                     <p className="font-semibold mb-2">Native Name: <span className=" font-normal">{(data[0]?.population).toLocaleString()}</span></p>
                                     <p className="font-semibold mb-2">Population: <span className="font-normal">{data[0]?.population}</span></p>
